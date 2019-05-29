@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Housing Likes
+
+    <a data-toggle="collapse" href="#housing_listing_housing_likes_new_form">
+      Add housing like
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @housing_listing.housing_likes.each do |housing_like| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/housing_likes/<%= housing_like.id %>">
+          <%= housing_like.sublessee_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_housing_like_from_housing/<%= housing_like.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="housing_listing_housing_likes_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

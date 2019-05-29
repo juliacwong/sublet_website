@@ -53,6 +53,22 @@ class HousingLikesController < ApplicationController
     end
   end
 
+  def destroy_row_from_sublessee
+    @housing_like = HousingLike.find(params.fetch("id_to_remove"))
+
+    @housing_like.destroy
+
+    redirect_to("/users/#{@housing_like.sublessee_id}", notice: "HousingLike deleted successfully.")
+  end
+
+  def destroy_row_from_housing
+    @housing_like = HousingLike.find(params.fetch("id_to_remove"))
+
+    @housing_like.destroy
+
+    redirect_to("/housing_listings/#{@housing_like.housing_id}", notice: "HousingLike deleted successfully.")
+  end
+
   def destroy_row
     @housing_like = HousingLike.find(params.fetch("id_to_remove"))
 

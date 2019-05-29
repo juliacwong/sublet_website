@@ -59,6 +59,22 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy_row_from_sublessee
+    @booking = Booking.find(params.fetch("id_to_remove"))
+
+    @booking.destroy
+
+    redirect_to("/users/#{@booking.sublessee_id}", notice: "Booking deleted successfully.")
+  end
+
+  def destroy_row_from_housing
+    @booking = Booking.find(params.fetch("id_to_remove"))
+
+    @booking.destroy
+
+    redirect_to("/housing_listings/#{@booking.housing_id}", notice: "Booking deleted successfully.")
+  end
+
   def destroy_row
     @booking = Booking.find(params.fetch("id_to_remove"))
 

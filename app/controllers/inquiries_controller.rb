@@ -57,6 +57,22 @@ class InquiriesController < ApplicationController
     end
   end
 
+  def destroy_row_from_sublessee
+    @inquiry = Inquiry.find(params.fetch("id_to_remove"))
+
+    @inquiry.destroy
+
+    redirect_to("/users/#{@inquiry.sublessee_id}", notice: "Inquiry deleted successfully.")
+  end
+
+  def destroy_row_from_housing
+    @inquiry = Inquiry.find(params.fetch("id_to_remove"))
+
+    @inquiry.destroy
+
+    redirect_to("/housing_listings/#{@inquiry.housing_id}", notice: "Inquiry deleted successfully.")
+  end
+
   def destroy_row
     @inquiry = Inquiry.find(params.fetch("id_to_remove"))
 

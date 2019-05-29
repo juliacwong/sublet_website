@@ -83,6 +83,14 @@ class HousingListingsController < ApplicationController
     end
   end
 
+  def destroy_row_from_sublessor
+    @housing_listing = HousingListing.find(params.fetch("id_to_remove"))
+
+    @housing_listing.destroy
+
+    redirect_to("/users/#{@housing_listing.sublessor_id}", notice: "HousingListing deleted successfully.")
+  end
+
   def destroy_row
     @housing_listing = HousingListing.find(params.fetch("id_to_remove"))
 

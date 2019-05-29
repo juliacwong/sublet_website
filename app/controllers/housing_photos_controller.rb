@@ -55,6 +55,22 @@ class HousingPhotosController < ApplicationController
     end
   end
 
+  def destroy_row_from_photo_owner
+    @housing_photo = HousingPhoto.find(params.fetch("id_to_remove"))
+
+    @housing_photo.destroy
+
+    redirect_to("/users/#{@housing_photo.photo_owner_id}", notice: "HousingPhoto deleted successfully.")
+  end
+
+  def destroy_row_from_housing
+    @housing_photo = HousingPhoto.find(params.fetch("id_to_remove"))
+
+    @housing_photo.destroy
+
+    redirect_to("/housing_listings/#{@housing_photo.housing_id}", notice: "HousingPhoto deleted successfully.")
+  end
+
   def destroy_row
     @housing_photo = HousingPhoto.find(params.fetch("id_to_remove"))
 

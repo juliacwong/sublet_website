@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Housing Listings
+
+    <a data-toggle="collapse" href="#user_housing_listings_new_form">
+      Add housing listing
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.housing_listings.each do |housing_listing| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/housing_listings/<%= housing_listing.id %>">
+          <%= housing_listing.housing_type %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_housing_photo/:id_to_remove", { :controller => "housing_photos", :action => "destroy_row" })
+  get("/delete_housing_photo_from_housing/:id_to_remove", { :controller => "housing_photos", :action => "destroy_row_from_housing" })
+  get("/delete_housing_photo_from_photo_owner/:id_to_remove", { :controller => "housing_photos", :action => "destroy_row_from_photo_owner" })
 
   #------------------------------
 
@@ -37,6 +39,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_housing_like/:id_to_remove", { :controller => "housing_likes", :action => "destroy_row" })
+  get("/delete_housing_like_from_housing/:id_to_remove", { :controller => "housing_likes", :action => "destroy_row_from_housing" })
+  get("/delete_housing_like_from_sublessee/:id_to_remove", { :controller => "housing_likes", :action => "destroy_row_from_sublessee" })
 
   #------------------------------
 
@@ -56,6 +60,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_inquiry/:id_to_remove", { :controller => "inquiries", :action => "destroy_row" })
+  get("/delete_inquiry_from_housing/:id_to_remove", { :controller => "inquiries", :action => "destroy_row_from_housing" })
+  get("/delete_inquiry_from_sublessee/:id_to_remove", { :controller => "inquiries", :action => "destroy_row_from_sublessee" })
 
   #------------------------------
 
@@ -75,6 +81,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_booking/:id_to_remove", { :controller => "bookings", :action => "destroy_row" })
+  get("/delete_booking_from_housing/:id_to_remove", { :controller => "bookings", :action => "destroy_row_from_housing" })
+  get("/delete_booking_from_sublessee/:id_to_remove", { :controller => "bookings", :action => "destroy_row_from_sublessee" })
 
   #------------------------------
 
@@ -94,6 +102,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_housing_listing/:id_to_remove", { :controller => "housing_listings", :action => "destroy_row" })
+  get("/delete_housing_listing_from_sublessor/:id_to_remove", { :controller => "housing_listings", :action => "destroy_row_from_sublessor" })
 
   #------------------------------
 
