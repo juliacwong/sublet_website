@@ -36,7 +36,7 @@
     </label>
 
     <!-- Input for photo_owner_id start -->
-    <input type="text" id="photo_owner_id" name="photo_owner_id" class="form-control" value="<%= @housing_photo.photo_owner_id %>">
+    <%= select_tag(:photo_owner_id, options_from_collection_for_select(User.all, :id, :email, @housing_photo.photo_owner_id), :class => "form-control") %>
     <!-- Input for photo_owner_id end -->
   </div>
   <!-- Label and input for photo_owner_id end -->
