@@ -13,17 +13,21 @@
 
       <!-- Edit link housing_listing start -->
       <div class="col">
-        <a href="/housing_listings/<%= @housing_listing.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit housing listing
-        </a>
+        <% if current_user == @housing_listing.sublessor %>
+          <a href="/housing_listings/<%= @housing_listing.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit housing_listing
+          </a>
+        <% end %>
       </div>
       <!-- Edit link housing_listing end -->
 
       <!-- Delete link housing_listing start -->
       <div class="col">
-        <a href="/delete_housing_listing/<%= @housing_listing.id %>" class="btn btn-block btn-outline-secondary">
-          Delete housing listing
-        </a>
+        <% if current_user == @housing_listing.sublessor %>
+          <a href="/delete_housing_listing/<%= @housing_listing.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete housing_listing
+          </a>
+        <% end %>
       </div>
       <!-- Delete link housing_listing end -->
     </div>
