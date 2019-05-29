@@ -1,4 +1,6 @@
 ActiveAdmin.register Inquiry do
+
+ permit_params :sublessee_id, :sublessor_id, :housing_id, :inquiry_details
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
