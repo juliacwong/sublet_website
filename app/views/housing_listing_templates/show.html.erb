@@ -1,0 +1,208 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Housing listing #<%= @housing_listing.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/housing_listings" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link housing_listing start -->
+      <div class="col">
+        <a href="/housing_listings/<%= @housing_listing.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit housing listing
+        </a>
+      </div>
+      <!-- Edit link housing_listing end -->
+
+      <!-- Delete link housing_listing start -->
+      <div class="col">
+        <a href="/delete_housing_listing/<%= @housing_listing.id %>" class="btn btn-block btn-outline-secondary">
+          Delete housing listing
+        </a>
+      </div>
+      <!-- Delete link housing_listing end -->
+    </div>
+
+    <dl>
+      <dt>
+        Housing type
+      </dt>
+      <!-- Display housing_type start -->
+      <dd>
+        <%= @housing_listing.housing_type %>
+      </dd>
+      <!-- Display housing_type end -->
+
+      <dt>
+        City
+      </dt>
+      <!-- Display city start -->
+      <dd>
+        <%= @housing_listing.city %>
+      </dd>
+      <!-- Display city end -->
+
+      <dt>
+        Neighborhood
+      </dt>
+      <!-- Display neighborhood start -->
+      <dd>
+        <%= @housing_listing.neighborhood %>
+      </dd>
+      <!-- Display neighborhood end -->
+
+      <dt>
+        Number of guests
+      </dt>
+      <!-- Display number_of_guests start -->
+      <dd>
+        <%= @housing_listing.number_of_guests %>
+      </dd>
+      <!-- Display number_of_guests end -->
+
+      <dt>
+        Number of bedrooms
+      </dt>
+      <!-- Display number_of_bedrooms start -->
+      <dd>
+        <%= @housing_listing.number_of_bedrooms %>
+      </dd>
+      <!-- Display number_of_bedrooms end -->
+
+      <dt>
+        Number of bathrooms
+      </dt>
+      <!-- Display number_of_bathrooms start -->
+      <dd>
+        <%= @housing_listing.number_of_bathrooms %>
+      </dd>
+      <!-- Display number_of_bathrooms end -->
+
+      <dt>
+        State
+      </dt>
+      <!-- Display state start -->
+      <dd>
+        <%= @housing_listing.state %>
+      </dd>
+      <!-- Display state end -->
+
+      <dt>
+        Country
+      </dt>
+      <!-- Display country start -->
+      <dd>
+        <%= @housing_listing.country %>
+      </dd>
+      <!-- Display country end -->
+
+      <dt>
+        Amenities
+      </dt>
+      <!-- Display amenities start -->
+      <dd>
+        <%= @housing_listing.amenities %>
+      </dd>
+      <!-- Display amenities end -->
+
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @housing_listing.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        Monthly price
+      </dt>
+      <!-- Display monthly_price start -->
+      <dd>
+        <%= @housing_listing.monthly_price %>
+      </dd>
+      <!-- Display monthly_price end -->
+
+      <dt>
+        Sublessor
+      </dt>
+      <!-- Display sublessor_id start -->
+      <dd>
+        <%= @housing_listing.sublessor_id %>
+      </dd>
+      <!-- Display sublessor_id end -->
+
+      <dt>
+        Available from
+      </dt>
+      <!-- Display available_from start -->
+      <dd>
+        <%= @housing_listing.available_from %>
+      </dd>
+      <!-- Display available_from end -->
+
+      <dt>
+        Available till
+      </dt>
+      <!-- Display available_till start -->
+      <dd>
+        <%= @housing_listing.available_till %>
+      </dd>
+      <!-- Display available_till end -->
+
+      <dt>
+        Housing photo
+      </dt>
+      <!-- Display housing_photo_id start -->
+      <dd>
+        <%= @housing_listing.housing_photo_id %>
+      </dd>
+      <!-- Display housing_photo_id end -->
+
+      <dt>
+        Sublessee
+      </dt>
+      <!-- Display sublessee_id start -->
+      <dd>
+        <%= @housing_listing.sublessee_id %>
+      </dd>
+      <!-- Display sublessee_id end -->
+
+      <dt>
+        Zip code
+      </dt>
+      <!-- Display zip_code start -->
+      <dd>
+        <%= @housing_listing.zip_code %>
+      </dd>
+      <!-- Display zip_code end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@housing_listing.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@housing_listing.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

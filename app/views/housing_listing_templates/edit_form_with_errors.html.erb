@@ -1,0 +1,233 @@
+<!-- Validation failure messages -->
+<% if @housing_listing.errors.any? %>
+  <% @housing_listing.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit housing listing #<%= @housing_listing.id %>
+</h1>
+
+<hr>
+
+<!-- Form housing_listing start -->
+<form action="/update_housing_listing/<%= @housing_listing.id %>" method="post">
+<!-- Form housing_listing end -->
+
+  <!-- Label and input for housing_type start -->
+  <div class="form-group">
+    <label for="housing_type">
+      Housing type
+    </label>
+
+    <!-- Input for housing_type start -->
+    <input type="text" id="housing_type" name="housing_type" class="form-control" value="<%= @housing_listing.housing_type %>">
+    <!-- Input for housing_type end -->
+  </div>
+  <!-- Label and input for housing_type end -->
+
+  <!-- Label and input for city start -->
+  <div class="form-group">
+    <label for="city">
+      City
+    </label>
+
+    <!-- Input for city start -->
+    <input type="text" id="city" name="city" class="form-control" value="<%= @housing_listing.city %>">
+    <!-- Input for city end -->
+  </div>
+  <!-- Label and input for city end -->
+
+  <!-- Label and input for neighborhood start -->
+  <div class="form-group">
+    <label for="neighborhood">
+      Neighborhood
+    </label>
+
+    <!-- Input for neighborhood start -->
+    <input type="text" id="neighborhood" name="neighborhood" class="form-control" value="<%= @housing_listing.neighborhood %>">
+    <!-- Input for neighborhood end -->
+  </div>
+  <!-- Label and input for neighborhood end -->
+
+  <!-- Label and input for number_of_guests start -->
+  <div class="form-group">
+    <label for="number_of_guests">
+      Number of guests
+    </label>
+
+    <!-- Input for number_of_guests start -->
+    <input type="text" id="number_of_guests" name="number_of_guests" class="form-control" value="<%= @housing_listing.number_of_guests %>">
+    <!-- Input for number_of_guests end -->
+  </div>
+  <!-- Label and input for number_of_guests end -->
+
+  <!-- Label and input for number_of_bedrooms start -->
+  <div class="form-group">
+    <label for="number_of_bedrooms">
+      Number of bedrooms
+    </label>
+
+    <!-- Input for number_of_bedrooms start -->
+    <input type="text" id="number_of_bedrooms" name="number_of_bedrooms" class="form-control" value="<%= @housing_listing.number_of_bedrooms %>">
+    <!-- Input for number_of_bedrooms end -->
+  </div>
+  <!-- Label and input for number_of_bedrooms end -->
+
+  <!-- Label and input for number_of_bathrooms start -->
+  <div class="form-group">
+    <label for="number_of_bathrooms">
+      Number of bathrooms
+    </label>
+
+    <!-- Input for number_of_bathrooms start -->
+    <input type="text" id="number_of_bathrooms" name="number_of_bathrooms" class="form-control" value="<%= @housing_listing.number_of_bathrooms %>">
+    <!-- Input for number_of_bathrooms end -->
+  </div>
+  <!-- Label and input for number_of_bathrooms end -->
+
+  <!-- Label and input for state start -->
+  <div class="form-group">
+    <label for="state">
+      State
+    </label>
+
+    <!-- Input for state start -->
+    <input type="text" id="state" name="state" class="form-control" value="<%= @housing_listing.state %>">
+    <!-- Input for state end -->
+  </div>
+  <!-- Label and input for state end -->
+
+  <!-- Label and input for country start -->
+  <div class="form-group">
+    <label for="country">
+      Country
+    </label>
+
+    <!-- Input for country start -->
+    <input type="text" id="country" name="country" class="form-control" value="<%= @housing_listing.country %>">
+    <!-- Input for country end -->
+  </div>
+  <!-- Label and input for country end -->
+
+  <!-- Label and input for amenities start -->
+  <div class="form-group">
+    <label for="amenities">
+      Amenities
+    </label>
+
+    <!-- Input for amenities start -->
+    <input type="text" id="amenities" name="amenities" class="form-control" value="<%= @housing_listing.amenities %>">
+    <!-- Input for amenities end -->
+  </div>
+  <!-- Label and input for amenities end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @housing_listing.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for monthly_price start -->
+  <div class="form-group">
+    <label for="monthly_price">
+      Monthly price
+    </label>
+
+    <!-- Input for monthly_price start -->
+    <input type="text" id="monthly_price" name="monthly_price" class="form-control" value="<%= @housing_listing.monthly_price %>">
+    <!-- Input for monthly_price end -->
+  </div>
+  <!-- Label and input for monthly_price end -->
+
+  <!-- Label and input for sublessor_id start -->
+  <div class="form-group">
+    <label for="sublessor_id">
+      Sublessor
+    </label>
+
+    <!-- Input for sublessor_id start -->
+    <input type="text" id="sublessor_id" name="sublessor_id" class="form-control" value="<%= @housing_listing.sublessor_id %>">
+    <!-- Input for sublessor_id end -->
+  </div>
+  <!-- Label and input for sublessor_id end -->
+
+  <!-- Label and input for available_from start -->
+  <div class="form-group">
+    <label for="available_from">
+      Available from
+    </label>
+
+    <!-- Input for available_from start -->
+    <input type="text" id="available_from" name="available_from" class="form-control" value="<%= @housing_listing.available_from %>">
+    <!-- Input for available_from end -->
+  </div>
+  <!-- Label and input for available_from end -->
+
+  <!-- Label and input for available_till start -->
+  <div class="form-group">
+    <label for="available_till">
+      Available till
+    </label>
+
+    <!-- Input for available_till start -->
+    <input type="text" id="available_till" name="available_till" class="form-control" value="<%= @housing_listing.available_till %>">
+    <!-- Input for available_till end -->
+  </div>
+  <!-- Label and input for available_till end -->
+
+  <!-- Label and input for housing_photo_id start -->
+  <div class="form-group">
+    <label for="housing_photo_id">
+      Housing photo
+    </label>
+
+    <!-- Input for housing_photo_id start -->
+    <input type="text" id="housing_photo_id" name="housing_photo_id" class="form-control" value="<%= @housing_listing.housing_photo_id %>">
+    <!-- Input for housing_photo_id end -->
+  </div>
+  <!-- Label and input for housing_photo_id end -->
+
+  <!-- Label and input for sublessee_id start -->
+  <div class="form-group">
+    <label for="sublessee_id">
+      Sublessee
+    </label>
+
+    <!-- Input for sublessee_id start -->
+    <input type="text" id="sublessee_id" name="sublessee_id" class="form-control" value="<%= @housing_listing.sublessee_id %>">
+    <!-- Input for sublessee_id end -->
+  </div>
+  <!-- Label and input for sublessee_id end -->
+
+  <!-- Label and input for zip_code start -->
+  <div class="form-group">
+    <label for="zip_code">
+      Zip code
+    </label>
+
+    <!-- Input for zip_code start -->
+    <input type="text" id="zip_code" name="zip_code" class="form-control" value="<%= @housing_listing.zip_code %>">
+    <!-- Input for zip_code end -->
+  </div>
+  <!-- Label and input for zip_code end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update housing listing
+  </button>
+</form>
+
+<hr>
+
+<a href="/housing_listings">
+  Go back
+</a>
