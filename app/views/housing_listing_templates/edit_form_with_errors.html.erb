@@ -150,15 +150,6 @@
   <!-- Label and input for monthly_price end -->
 
   <!-- Label and input for sublessor_id start -->
-  <div class="form-group">
-    <label for="sublessor_id">
-      Sublessor
-    </label>
-
-    <!-- Input for sublessor_id start -->
-    <%= select_tag(:sublessor_id, options_from_collection_for_select(User.all, :id, :email, @housing_listing.sublessor_id), :class => "form-control") %>
-    <!-- Input for sublessor_id end -->
-  </div>
   <!-- Label and input for sublessor_id end -->
 
   <!-- Label and input for available_from start -->

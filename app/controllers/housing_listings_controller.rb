@@ -71,7 +71,7 @@ class HousingListingsController < ApplicationController
     @housing_listing.amenities = params.fetch("amenities")
     @housing_listing.description = params.fetch("description")
     @housing_listing.monthly_price = params.fetch("monthly_price")
-    @housing_listing.sublessor_id = params.fetch("sublessor_id")
+    
     @housing_listing.available_from = params.fetch("available_from")
     @housing_listing.available_till = params.fetch("available_till")
     @housing_listing.housing_photo_id = params.fetch("housing_photo_id")
