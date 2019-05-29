@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :bookings,
+             :foreign_key => "sublessee_id"
+
   has_many   :inquiries,
              :foreign_key => "sublessee_id",
              :dependent => :destroy
