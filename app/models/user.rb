@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :photos,
+             :class_name => "HousingPhoto",
+             :foreign_key => "photo_owner_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
