@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "housing_listings#index"
   # Routes for the Housing photo resource:
 
   # CREATE
