@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :housing_likes,
+             :foreign_key => "sublessee_id",
+             :dependent => :destroy
+
   has_many   :housing_listings,
              :foreign_key => "sublessor_id",
              :dependent => :destroy
