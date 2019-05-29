@@ -56,7 +56,7 @@ class HousingLikesController < ApplicationController
   def update_row
     @housing_like = HousingLike.find(params.fetch("id_to_modify"))
 
-    @housing_like.sublessee_id = params.fetch("sublessee_id")
+    
     @housing_like.housing_id = params.fetch("housing_id")
 
     if @housing_like.valid?
