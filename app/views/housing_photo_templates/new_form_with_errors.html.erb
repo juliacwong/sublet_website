@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @housing_photo.present? %>
+  <% if @housing_photo.errors.any? %>
+    <% @housing_photo.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new housing photo
+</h1>
+
+
+<hr>
+
+<!-- Form housing_photo start -->
+<form action="/create_housing_photo" method="post">
+<!-- Form housing_photo end -->
+
+  <!-- Label and input for photo_caption start -->
+  <div class="form-group">
+    <label for="photo_caption">
+      Photo caption
+    </label>
+
+    <!-- Input for photo_caption start -->
+    <input type="text" id="photo_caption" name="photo_caption" class="form-control" value="<%= @housing_photo.photo_caption %>">
+    <!-- Input for photo_caption end -->
+  </div>
+  <!-- Label and input for photo_caption end -->
+
+  <!-- Label and input for photo_owner_id start -->
+  <div class="form-group">
+    <label for="photo_owner_id">
+      Photo owner
+    </label>
+
+    <!-- Input for photo_owner_id start -->
+    <input type="text" id="photo_owner_id" name="photo_owner_id" class="form-control" value="<%= @housing_photo.photo_owner_id %>">
+    <!-- Input for photo_owner_id end -->
+  </div>
+  <!-- Label and input for photo_owner_id end -->
+
+  <!-- Label and input for housing_id start -->
+  <div class="form-group">
+    <label for="housing_id">
+      Housing
+    </label>
+
+    <!-- Input for housing_id start -->
+    <input type="text" id="housing_id" name="housing_id" class="form-control" value="<%= @housing_photo.housing_id %>">
+    <!-- Input for housing_id end -->
+  </div>
+  <!-- Label and input for housing_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create housing photo
+  </button>
+</form>
+
+<hr>
+
+<a href="/housing_photos">
+  Go back
+</a>

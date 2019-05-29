@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Housing photo resource:
+
+  # CREATE
+  get("/housing_photos/new", { :controller => "housing_photos", :action => "new_form" })
+  post("/create_housing_photo", { :controller => "housing_photos", :action => "create_row" })
+
+  # READ
+  get("/housing_photos", { :controller => "housing_photos", :action => "index" })
+  get("/housing_photos/:id_to_display", { :controller => "housing_photos", :action => "show" })
+
+  # UPDATE
+  get("/housing_photos/:prefill_with_id/edit", { :controller => "housing_photos", :action => "edit_form" })
+  post("/update_housing_photo/:id_to_modify", { :controller => "housing_photos", :action => "update_row" })
+
+  # DELETE
+  get("/delete_housing_photo/:id_to_remove", { :controller => "housing_photos", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Housing like resource:
 
   # CREATE
