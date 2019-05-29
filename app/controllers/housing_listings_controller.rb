@@ -6,6 +6,10 @@ class HousingListingsController < ApplicationController
   end
 
   def show
+    @housing_photo = HousingPhoto.new
+    @booking = Booking.new
+    @inquiry = Inquiry.new
+    @housing_like = HousingLike.new
     @housing_listing = HousingListing.find(params.fetch("id_to_display"))
 
     render("housing_listing_templates/show.html.erb")

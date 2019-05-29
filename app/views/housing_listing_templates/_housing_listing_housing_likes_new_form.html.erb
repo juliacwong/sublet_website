@@ -1,0 +1,25 @@
+<!-- Form housing_like start -->
+<form action="/create_housing_like_from_housing_listing" method="post">
+<!-- Form housing_like end -->
+
+  <!-- Label and input for sublessee_id start -->
+  <div class="form-group">
+    <label for="sublessee_id">
+      Sublessee
+    </label>
+
+    <!-- Input for sublessee_id start -->
+    <input type="text" id="sublessee_id" name="sublessee_id" class="form-control" value="<%= @housing_like.sublessee_id %>">
+    <!-- Input for sublessee_id end -->
+  </div>
+  <!-- Label and input for sublessee_id end -->
+
+  <!-- Label and input for housing_id start -->
+  <!-- Input for housing_id start -->
+  <input type="hidden" name="housing_id" value="<%= @housing_listing.id %>">
+  <!-- Input for housing_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create housing like
+  </button>
+</form>

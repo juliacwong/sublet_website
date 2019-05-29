@@ -35,6 +35,24 @@ class BookingsController < ApplicationController
     end
   end
 
+  def create_row_from_housing_listing
+    @booking = Booking.new
+
+    @booking.sublessor_id = params.fetch("sublessor_id")
+    @booking.sublessee_id = params.fetch("sublessee_id")
+    @booking.payment_method = params.fetch("payment_method")
+    @booking.housing_id = params.fetch("housing_id")
+    @booking.booking_details = params.fetch("booking_details")
+
+    if @booking.valid?
+      @booking.save
+
+      redirect_to("/housing_listings/#{@booking.housing_id}", notice: "Booking created successfully.")
+    else
+      render("booking_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @booking = Booking.find(params.fetch("prefill_with_id"))
 

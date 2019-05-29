@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/housing_photos/new", { :controller => "housing_photos", :action => "new_form" })
   post("/create_housing_photo", { :controller => "housing_photos", :action => "create_row" })
+  post("/create_housing_photo_from_housing_listing", { :controller => "housing_photos", :action => "create_row_from_housing_listing" })
 
   # READ
   get("/housing_photos", { :controller => "housing_photos", :action => "index" })
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/housing_likes/new", { :controller => "housing_likes", :action => "new_form" })
   post("/create_housing_like", { :controller => "housing_likes", :action => "create_row" })
+  post("/create_housing_like_from_housing_listing", { :controller => "housing_likes", :action => "create_row_from_housing_listing" })
 
   # READ
   get("/housing_likes", { :controller => "housing_likes", :action => "index" })
@@ -49,6 +51,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/inquiries/new", { :controller => "inquiries", :action => "new_form" })
   post("/create_inquiry", { :controller => "inquiries", :action => "create_row" })
+  post("/create_inquiry_from_housing_listing", { :controller => "inquiries", :action => "create_row_from_housing_listing" })
 
   # READ
   get("/inquiries", { :controller => "inquiries", :action => "index" })
@@ -70,6 +73,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/bookings/new", { :controller => "bookings", :action => "new_form" })
   post("/create_booking", { :controller => "bookings", :action => "create_row" })
+  post("/create_booking_from_housing_listing", { :controller => "bookings", :action => "create_row_from_housing_listing" })
 
   # READ
   get("/bookings", { :controller => "bookings", :action => "index" })

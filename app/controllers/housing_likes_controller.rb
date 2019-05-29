@@ -32,6 +32,21 @@ class HousingLikesController < ApplicationController
     end
   end
 
+  def create_row_from_housing_listing
+    @housing_like = HousingLike.new
+
+    @housing_like.sublessee_id = params.fetch("sublessee_id")
+    @housing_like.housing_id = params.fetch("housing_id")
+
+    if @housing_like.valid?
+      @housing_like.save
+
+      redirect_to("/housing_listings/#{@housing_like.housing_id}", notice: "HousingLike created successfully.")
+    else
+      render("housing_like_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @housing_like = HousingLike.find(params.fetch("prefill_with_id"))
 
