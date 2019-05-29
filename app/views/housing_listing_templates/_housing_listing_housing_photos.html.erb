@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_housing_photo_from_housing/<%= housing_photo.id %>">
-          Delete
-        </a>
+        <%if current_user == housing_photo.photo_owner %>
+          <a href="/delete_housing_photo_from_housing_listing/<%= housing_photo.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
