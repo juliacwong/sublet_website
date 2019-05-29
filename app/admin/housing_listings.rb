@@ -1,4 +1,6 @@
 ActiveAdmin.register HousingListing do
+
+ permit_params :housing_type, :city, :neighborhood, :number_of_guests, :number_of_bedrooms, :number_of_bathrooms, :state, :country, :amenities, :description, :monthly_price, :sublessor_id, :available_from, :available_till, :housing_photo_id, :sublessee_id, :zip_code
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
