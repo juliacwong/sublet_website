@@ -4,6 +4,8 @@ RSpec.describe HousingListing, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:housing_photos) }
+
     it { should have_many(:bookings) }
 
     it { should have_many(:inquiries) }
