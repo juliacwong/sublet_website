@@ -10,7 +10,7 @@ class HousingListingsController < ApplicationController
   end
 
   def index
-    @housing_listings = HousingListing.all
+    @housing_listings = HousingListing.page(params[:page]).per(10)
 
     render("housing_listing_templates/index.html.erb")
   end

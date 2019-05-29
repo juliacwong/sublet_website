@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.page(params[:page]).per(10)
 
     render("booking_templates/index.html.erb")
   end
