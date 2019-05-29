@@ -10,7 +10,8 @@ class HousingPhotosController < ApplicationController
   end
 
   def index
-    @housing_photos = HousingPhoto.page(params[:page]).per(10)
+    @q = HousingPhoto.ransack(params[:q])
+    @housing_photos = @q.result(:distinct => true).includes(:photo_owner, :housing).page(params[:page]).per(10)
 
     render("housing_photo_templates/index.html.erb")
   end

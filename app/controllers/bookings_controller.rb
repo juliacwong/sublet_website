@@ -10,7 +10,8 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.page(params[:page]).per(10)
+    @q = Booking.ransack(params[:q])
+    @bookings = @q.result(:distinct => true).includes(:sublessee, :housing).page(params[:page]).per(10)
 
     render("booking_templates/index.html.erb")
   end

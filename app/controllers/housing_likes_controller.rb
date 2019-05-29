@@ -10,7 +10,8 @@ class HousingLikesController < ApplicationController
   end
 
   def index
-    @housing_likes = HousingLike.page(params[:page]).per(10)
+    @q = HousingLike.ransack(params[:q])
+    @housing_likes = @q.result(:distinct => true).includes(:sublessee, :housing).page(params[:page]).per(10)
 
     render("housing_like_templates/index.html.erb")
   end
