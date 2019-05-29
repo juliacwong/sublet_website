@@ -4,6 +4,8 @@ RSpec.describe Booking, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:housing) }
+
     it { should belong_to(:sublessee) }
 
     end

@@ -1,6 +1,10 @@
 class HousingListing < ApplicationRecord
   # Direct associations
 
+  has_many   :bookings,
+             :foreign_key => "housing_id",
+             :dependent => :destroy
+
   has_many   :inquiries,
              :foreign_key => "housing_id",
              :dependent => :destroy
