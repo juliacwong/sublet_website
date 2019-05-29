@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:housing_listings) }
+
     it { should have_many(:photos) }
 
     end
