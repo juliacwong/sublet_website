@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.photos.each do |housing_photo| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/housing_photos/<%= housing_photo.id %>">
           <%= housing_photo.photo_caption %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

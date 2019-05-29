@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link housing_like start -->
       <div class="col">
         <% if current_user == @housing_like.sublessee %>
           <a href="/housing_likes/<%= @housing_like.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link housing_like end -->
 
-      <!-- Delete link housing_like start -->
       <div class="col">
         <% if current_user == @housing_like.sublessee %>
           <a href="/delete_housing_like/<%= @housing_like.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link housing_like end -->
     </div>
 
     <dl>
       <dt>
         Sublessee
       </dt>
-      <!-- Display sublessee_id start -->
       <dd>
         <% if @housing_like.sublessee.present? %>
           <a href="/users/<%= @housing_like.sublessee_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display sublessee_id end -->
 
       <dt>
         Housing
       </dt>
-      <!-- Display housing_id start -->
       <dd>
         <% if @housing_like.housing.present? %>
           <a href="/housing_listings/<%= @housing_like.housing_id %>">
@@ -57,28 +50,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display housing_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@housing_like.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@housing_like.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

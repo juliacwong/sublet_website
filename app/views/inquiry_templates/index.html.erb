@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "inquiry_templates/inquiries_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,13 +58,10 @@
 
       <% @inquiries.each do |inquiry| %>
       <tr>
-        <!-- Display inquiry.id start -->
         <td>
           <%= inquiry.id %>
         </td>
-        <!-- Display inquiry.id end -->
 
-        <!-- Display inquiry.sublessee_id start -->
         <td>
           <% if inquiry.sublessee.present? %>
             <a href="/users/<%= inquiry.sublessee.id %>">
@@ -76,15 +69,11 @@
             </a>
           <% end %>
         </td>
-        <!-- Display inquiry.sublessee_id end -->
 
-        <!-- Display inquiry.sublessor_id start -->
         <td>
           <%= inquiry.sublessor_id %>
         </td>
-        <!-- Display inquiry.sublessor_id end -->
 
-        <!-- Display inquiry.housing_id start -->
         <td>
           <% if inquiry.housing.present? %>
             <a href="/housing_listings/<%= inquiry.housing.id %>">
@@ -92,25 +81,18 @@
             </a>
           <% end %>
         </td>
-        <!-- Display inquiry.housing_id end -->
 
-        <!-- Display inquiry.inquiry_details start -->
         <td>
           <%= inquiry.inquiry_details %>
         </td>
-        <!-- Display inquiry.inquiry_details end -->
 
-        <!-- Display inquiry.created_at start -->
         <td>
           <%= time_ago_in_words(inquiry.created_at) %> ago
         </td>
-        <!-- Display inquiry.created_at end -->
 
-        <!-- Display inquiry.updated_at start -->
         <td>
           <%= time_ago_in_words(inquiry.updated_at) %> ago
         </td>
-        <!-- Display inquiry.updated_at end -->
 
         <td>
           <a href="/inquiries/<%= inquiry.id %>">

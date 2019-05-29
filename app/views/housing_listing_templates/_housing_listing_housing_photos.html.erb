@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @housing_listing.housing_photos.each do |housing_photo| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/housing_photos/<%= housing_photo.id %>">
           <%= housing_photo.photo_caption %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == housing_photo.photo_owner %>
           <a href="/delete_housing_photo_from_housing_listing/<%= housing_photo.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="housing_listing_housing_photos_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "housing_listing_templates/housing_listing_housing_photos_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

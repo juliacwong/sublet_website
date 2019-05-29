@@ -1,29 +1,16 @@
-<!-- Form housing_photo start -->
 <form action="/create_housing_photo_from_housing_listing" method="post">
-<!-- Form housing_photo end -->
 
-  <!-- Label and input for photo_caption start -->
   <div class="form-group">
     <label for="photo_caption">
       Photo caption
     </label>
 
-    <!-- Input for photo_caption start -->
     <input type="text" id="photo_caption" name="photo_caption" class="form-control" value="<%= @housing_photo.photo_caption %>">
-    <!-- Input for photo_caption end -->
   </div>
-  <!-- Label and input for photo_caption end -->
 
-  <!-- Label and input for photo_owner_id start -->
-  <!-- Input for "photo_owner_id" start -->
   <input type="hidden" name="photo_owner_id" value="<%= current_user.id %>">
-  <!-- Input for "photo_owner_id" end -->
-  <!-- Label and input for photo_owner_id end -->
 
-  <!-- Label and input for housing_id start -->
-  <!-- Input for housing_id start -->
   <input type="hidden" name="housing_id" value="<%= @housing_listing.id %>">
-  <!-- Input for housing_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create housing photo

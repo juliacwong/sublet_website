@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @housing_listing.bookings.each do |booking| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/bookings/<%= booking.id %>">
           <%= booking.sublessor_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == booking.sublessee %>
           <a href="/delete_booking_from_housing_listing/<%= booking.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="housing_listing_bookings_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "housing_listing_templates/housing_listing_bookings_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

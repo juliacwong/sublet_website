@@ -4,36 +4,24 @@
 
 <hr>
 
-<!-- Form housing_photo start -->
 <form action="/update_housing_photo/<%= @housing_photo.id %>" method="post">
-<!-- Form housing_photo end -->
 
-  <!-- Label and input for photo_caption start -->
   <div class="form-group">
     <label for="photo_caption">
       Photo caption
     </label>
 
-    <!-- Input for photo_caption start -->
     <input type="text" id="photo_caption" name="photo_caption" class="form-control" value="<%= @housing_photo.photo_caption %>">
-    <!-- Input for photo_caption end -->
   </div>
-  <!-- Label and input for photo_caption end -->
 
-  <!-- Label and input for photo_owner_id start -->
-  <!-- Label and input for photo_owner_id end -->
 
-  <!-- Label and input for housing_id start -->
   <div class="form-group">
     <label for="housing_id">
       Housing
     </label>
 
-    <!-- Input for housing_id start -->
     <%= select_tag(:housing_id, options_from_collection_for_select(HousingListing.all, :id, :housing_type, @housing_photo.housing_id), :class => "form-control") %>
-    <!-- Input for housing_id end -->
   </div>
-  <!-- Label and input for housing_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update housing photo

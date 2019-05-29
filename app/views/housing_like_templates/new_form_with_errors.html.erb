@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @housing_like.present? %>
   <% if @housing_like.errors.any? %>
     <% @housing_like.errors.full_messages.each do |message| %>
@@ -16,27 +15,17 @@
 
 <hr>
 
-<!-- Form housing_like start -->
 <form action="/create_housing_like" method="post">
-<!-- Form housing_like end -->
 
-  <!-- Label and input for sublessee_id start -->
-  <!-- Input for "sublessee_id" start -->
   <input type="hidden" name="sublessee_id" value="<%= current_user.id %>">
-  <!-- Input for "sublessee_id" end -->
-  <!-- Label and input for sublessee_id end -->
 
-  <!-- Label and input for housing_id start -->
   <div class="form-group">
     <label for="housing_id">
       Housing
     </label>
 
-    <!-- Input for housing_id start -->
     <%= select_tag(:housing_id, options_from_collection_for_select(HousingListing.all, :id, :housing_type, @housing_like.housing_id), :class => "form-control") %>
-    <!-- Input for housing_id end -->
   </div>
-  <!-- Label and input for housing_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create housing like

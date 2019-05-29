@@ -7,9 +7,7 @@
 
       <div class="card-body">
         <% was_validated = resource.errors.any? %>
-        <!-- Form html options start -->
         <% form_html_options = { novalidate: true, class: "mb-3" } %>
-        <!-- Form html options end -->
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: form_html_options) do |f| %>
 
           <div class="form-group">
@@ -91,7 +89,6 @@
           </div>
 
           
-          <!-- Devise Input for employer_or_school start -->
           <div class="form-group">
             <% employer_or_school_was_invalid = resource.errors.include?(:employer_or_school) %>
 
@@ -117,9 +114,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for employer_or_school end -->
           
-          <!-- Devise Input for linkedin_url start -->
           <div class="form-group">
             <% linkedin_url_was_invalid = resource.errors.include?(:linkedin_url) %>
 
@@ -145,9 +140,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for linkedin_url end -->
           
-          <!-- Devise Input for sublessor_status start -->
           <div class="form-group">
             <% sublessor_status_was_invalid = resource.errors.include?(:sublessor_status) %>
 
@@ -173,9 +166,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for sublessor_status end -->
           
-          <!-- Devise Input for sublessee_status start -->
           <div class="form-group">
             <% sublessee_status_was_invalid = resource.errors.include?(:sublessee_status) %>
 
@@ -201,9 +192,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for sublessee_status end -->
           
-          <!-- Devise Input for bio start -->
           <div class="form-group">
             <% bio_was_invalid = resource.errors.include?(:bio) %>
 
@@ -229,9 +218,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for bio end -->
           
-          <!-- Devise Input for first_name start -->
           <div class="form-group">
             <% first_name_was_invalid = resource.errors.include?(:first_name) %>
 
@@ -257,9 +244,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for first_name end -->
           
-          <!-- Devise Input for last_name start -->
           <div class="form-group">
             <% last_name_was_invalid = resource.errors.include?(:last_name) %>
 
@@ -285,7 +270,6 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for last_name end -->
           <%= f.button class: "btn btn-outline-primary btn-block" %>
 
           <hr>

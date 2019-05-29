@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @housing_listing.housing_likes.each do |housing_like| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/housing_likes/<%= housing_like.id %>">
           <%= housing_like.sublessee_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == housing_like.sublessee %>
           <a href="/delete_housing_like_from_housing_listing/<%= housing_like.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="housing_listing_housing_likes_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "housing_listing_templates/housing_listing_housing_likes_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

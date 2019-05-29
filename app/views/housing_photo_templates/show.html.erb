@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link housing_photo start -->
       <div class="col">
         <% if current_user == @housing_photo.photo_owner %>
           <a href="/housing_photos/<%= @housing_photo.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link housing_photo end -->
 
-      <!-- Delete link housing_photo start -->
       <div class="col">
         <% if current_user == @housing_photo.photo_owner %>
           <a href="/delete_housing_photo/<%= @housing_photo.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,23 +26,19 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link housing_photo end -->
     </div>
 
     <dl>
       <dt>
         Photo caption
       </dt>
-      <!-- Display photo_caption start -->
       <dd>
         <%= @housing_photo.photo_caption %>
       </dd>
-      <!-- Display photo_caption end -->
 
       <dt>
         Photo owner
       </dt>
-      <!-- Display photo_owner_id start -->
       <dd>
         <% if @housing_photo.photo_owner.present? %>
           <a href="/users/<%= @housing_photo.photo_owner_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display photo_owner_id end -->
 
       <dt>
         Housing
       </dt>
-      <!-- Display housing_id start -->
       <dd>
         <% if @housing_photo.housing.present? %>
           <a href="/housing_listings/<%= @housing_photo.housing_id %>">
@@ -66,28 +57,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display housing_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@housing_photo.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@housing_photo.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
