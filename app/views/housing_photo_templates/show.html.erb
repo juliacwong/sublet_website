@@ -47,7 +47,11 @@
       </dt>
       <!-- Display photo_owner_id start -->
       <dd>
-        <%= @housing_photo.photo_owner_id %>
+        <% if @housing_photo.photo_owner.present? %>
+          <a href="/users/<%= @housing_photo.photo_owner_id %>">
+            <%= @housing_photo.photo_owner.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display photo_owner_id end -->
 
@@ -56,7 +60,11 @@
       </dt>
       <!-- Display housing_id start -->
       <dd>
-        <%= @housing_photo.housing_id %>
+        <% if @housing_photo.housing.present? %>
+          <a href="/housing_listings/<%= @housing_photo.housing_id %>">
+            <%= @housing_photo.housing.housing_type %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display housing_id end -->
 

@@ -58,13 +58,21 @@
 
         <!-- Display housing_like.sublessee_id start -->
         <td>
-          <%= housing_like.sublessee.email %>
+          <% if housing_like.sublessee.present? %>
+            <a href="/users/<%= housing_like.sublessee.id %>">
+              <%= housing_like.sublessee.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display housing_like.sublessee_id end -->
 
         <!-- Display housing_like.housing_id start -->
         <td>
-          <%= housing_like.housing.housing_type %>
+          <% if housing_like.housing.present? %>
+            <a href="/housing_listings/<%= housing_like.housing.id %>">
+              <%= housing_like.housing.housing_type %>
+            </a>
+          <% end %>
         </td>
         <!-- Display housing_like.housing_id end -->
 

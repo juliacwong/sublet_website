@@ -68,13 +68,21 @@
 
         <!-- Display housing_photo.photo_owner_id start -->
         <td>
-          <%= housing_photo.photo_owner.email %>
+          <% if housing_photo.photo_owner.present? %>
+            <a href="/users/<%= housing_photo.photo_owner.id %>">
+              <%= housing_photo.photo_owner.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display housing_photo.photo_owner_id end -->
 
         <!-- Display housing_photo.housing_id start -->
         <td>
-          <%= housing_photo.housing.housing_type %>
+          <% if housing_photo.housing.present? %>
+            <a href="/housing_listings/<%= housing_photo.housing.id %>">
+              <%= housing_photo.housing.housing_type %>
+            </a>
+          <% end %>
         </td>
         <!-- Display housing_photo.housing_id end -->
 

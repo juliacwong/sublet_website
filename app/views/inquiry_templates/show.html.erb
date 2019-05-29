@@ -34,7 +34,11 @@
       </dt>
       <!-- Display sublessee_id start -->
       <dd>
-        <%= @inquiry.sublessee_id %>
+        <% if @inquiry.sublessee.present? %>
+          <a href="/users/<%= @inquiry.sublessee_id %>">
+            <%= @inquiry.sublessee.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display sublessee_id end -->
 
@@ -52,7 +56,11 @@
       </dt>
       <!-- Display housing_id start -->
       <dd>
-        <%= @inquiry.housing_id %>
+        <% if @inquiry.housing.present? %>
+          <a href="/housing_listings/<%= @inquiry.housing_id %>">
+            <%= @inquiry.housing.housing_type %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display housing_id end -->
 

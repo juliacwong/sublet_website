@@ -184,7 +184,11 @@
 
         <!-- Display housing_listing.sublessor_id start -->
         <td>
-          <%= housing_listing.sublessor.email %>
+          <% if housing_listing.sublessor.present? %>
+            <a href="/users/<%= housing_listing.sublessor.id %>">
+              <%= housing_listing.sublessor.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display housing_listing.sublessor_id end -->
 

@@ -76,7 +76,11 @@
 
         <!-- Display booking.sublessee_id start -->
         <td>
-          <%= booking.sublessee.email %>
+          <% if booking.sublessee.present? %>
+            <a href="/users/<%= booking.sublessee.id %>">
+              <%= booking.sublessee.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display booking.sublessee_id end -->
 
@@ -88,7 +92,11 @@
 
         <!-- Display booking.housing_id start -->
         <td>
-          <%= booking.housing.housing_type %>
+          <% if booking.housing.present? %>
+            <a href="/housing_listings/<%= booking.housing.id %>">
+              <%= booking.housing.housing_type %>
+            </a>
+          <% end %>
         </td>
         <!-- Display booking.housing_id end -->
 

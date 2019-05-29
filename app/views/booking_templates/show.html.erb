@@ -47,7 +47,11 @@
       </dt>
       <!-- Display sublessee_id start -->
       <dd>
-        <%= @booking.sublessee_id %>
+        <% if @booking.sublessee.present? %>
+          <a href="/users/<%= @booking.sublessee_id %>">
+            <%= @booking.sublessee.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display sublessee_id end -->
 
@@ -65,7 +69,11 @@
       </dt>
       <!-- Display housing_id start -->
       <dd>
-        <%= @booking.housing_id %>
+        <% if @booking.housing.present? %>
+          <a href="/housing_listings/<%= @booking.housing_id %>">
+            <%= @booking.housing.housing_type %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display housing_id end -->
 

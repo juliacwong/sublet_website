@@ -137,7 +137,11 @@
       </dt>
       <!-- Display sublessor_id start -->
       <dd>
-        <%= @housing_listing.sublessor_id %>
+        <% if @housing_listing.sublessor.present? %>
+          <a href="/users/<%= @housing_listing.sublessor_id %>">
+            <%= @housing_listing.sublessor.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display sublessor_id end -->
 

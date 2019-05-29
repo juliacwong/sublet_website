@@ -66,7 +66,11 @@
 
         <!-- Display inquiry.sublessee_id start -->
         <td>
-          <%= inquiry.sublessee.email %>
+          <% if inquiry.sublessee.present? %>
+            <a href="/users/<%= inquiry.sublessee.id %>">
+              <%= inquiry.sublessee.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display inquiry.sublessee_id end -->
 
@@ -78,7 +82,11 @@
 
         <!-- Display inquiry.housing_id start -->
         <td>
-          <%= inquiry.housing.housing_type %>
+          <% if inquiry.housing.present? %>
+            <a href="/housing_listings/<%= inquiry.housing.id %>">
+              <%= inquiry.housing.housing_type %>
+            </a>
+          <% end %>
         </td>
         <!-- Display inquiry.housing_id end -->
 
