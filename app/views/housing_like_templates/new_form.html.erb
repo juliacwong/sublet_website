@@ -28,7 +28,7 @@
     </label>
 
     <!-- Input for housing_id start -->
-    <input type="text" id="housing_id" name="housing_id" class="form-control">
+    <%= select_tag(:housing_id, options_from_collection_for_select(HousingListing.all, :id, :housing_type, @housing_like.housing_id), :class => "form-control") %>
     <!-- Input for housing_id end -->
   </div>
   <!-- Label and input for housing_id end -->
