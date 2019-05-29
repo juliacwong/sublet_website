@@ -59,7 +59,7 @@ class HousingPhotosController < ApplicationController
     @housing_photo = HousingPhoto.find(params.fetch("id_to_modify"))
 
     @housing_photo.photo_caption = params.fetch("photo_caption")
-    @housing_photo.photo_owner_id = params.fetch("photo_owner_id")
+    
     @housing_photo.housing_id = params.fetch("housing_id")
 
     if @housing_photo.valid?

@@ -21,15 +21,6 @@
   <!-- Label and input for photo_caption end -->
 
   <!-- Label and input for photo_owner_id start -->
-  <div class="form-group">
-    <label for="photo_owner_id">
-      Photo owner
-    </label>
-
-    <!-- Input for photo_owner_id start -->
-    <%= select_tag(:photo_owner_id, options_from_collection_for_select(User.all, :id, :email, @housing_photo.photo_owner_id), :class => "form-control") %>
-    <!-- Input for photo_owner_id end -->
-  </div>
   <!-- Label and input for photo_owner_id end -->
 
   <!-- Label and input for housing_id start -->
