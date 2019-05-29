@@ -13,17 +13,21 @@
 
       <!-- Edit link housing_like start -->
       <div class="col">
-        <a href="/housing_likes/<%= @housing_like.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit housing like
-        </a>
+        <% if current_user == @housing_like.sublessee %>
+          <a href="/housing_likes/<%= @housing_like.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit housing_like
+          </a>
+        <% end %>
       </div>
       <!-- Edit link housing_like end -->
 
       <!-- Delete link housing_like start -->
       <div class="col">
-        <a href="/delete_housing_like/<%= @housing_like.id %>" class="btn btn-block btn-outline-secondary">
-          Delete housing like
-        </a>
+        <% if current_user == @housing_like.sublessee %>
+          <a href="/delete_housing_like/<%= @housing_like.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete housing_like
+          </a>
+        <% end %>
       </div>
       <!-- Delete link housing_like end -->
     </div>

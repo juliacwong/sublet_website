@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_housing_like_from_housing/<%= housing_like.id %>">
-          Delete
-        </a>
+        <%if current_user == housing_like.sublessee %>
+          <a href="/delete_housing_like_from_housing_listing/<%= housing_like.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
