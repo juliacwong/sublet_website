@@ -1,0 +1,122 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All bookings
+    </h1>
+
+    <a href="/bookings/new" class="btn btn-block btn-outline-secondary">
+      Add a new booking
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Sublessor
+        </th>
+
+        <th>
+          Sublessee
+        </th>
+
+        <th>
+          Payment method
+        </th>
+
+        <th>
+          Housing
+        </th>
+
+        <th>
+          Booking details
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @bookings.each do |booking| %>
+      <tr>
+        <!-- Display booking.id start -->
+        <td>
+          <%= booking.id %>
+        </td>
+        <!-- Display booking.id end -->
+
+        <!-- Display booking.sublessor_id start -->
+        <td>
+          <%= booking.sublessor_id %>
+        </td>
+        <!-- Display booking.sublessor_id end -->
+
+        <!-- Display booking.sublessee_id start -->
+        <td>
+          <%= booking.sublessee_id %>
+        </td>
+        <!-- Display booking.sublessee_id end -->
+
+        <!-- Display booking.payment_method start -->
+        <td>
+          <%= booking.payment_method %>
+        </td>
+        <!-- Display booking.payment_method end -->
+
+        <!-- Display booking.housing_id start -->
+        <td>
+          <%= booking.housing_id %>
+        </td>
+        <!-- Display booking.housing_id end -->
+
+        <!-- Display booking.booking_details start -->
+        <td>
+          <%= booking.booking_details %>
+        </td>
+        <!-- Display booking.booking_details end -->
+
+        <!-- Display booking.created_at start -->
+        <td>
+          <%= time_ago_in_words(booking.created_at) %> ago
+        </td>
+        <!-- Display booking.created_at end -->
+
+        <!-- Display booking.updated_at start -->
+        <td>
+          <%= time_ago_in_words(booking.updated_at) %> ago
+        </td>
+        <!-- Display booking.updated_at end -->
+
+        <td>
+          <a href="/bookings/<%= booking.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

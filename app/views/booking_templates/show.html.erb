@@ -1,0 +1,100 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Booking #<%= @booking.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/bookings" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link booking start -->
+      <div class="col">
+        <a href="/bookings/<%= @booking.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit booking
+        </a>
+      </div>
+      <!-- Edit link booking end -->
+
+      <!-- Delete link booking start -->
+      <div class="col">
+        <a href="/delete_booking/<%= @booking.id %>" class="btn btn-block btn-outline-secondary">
+          Delete booking
+        </a>
+      </div>
+      <!-- Delete link booking end -->
+    </div>
+
+    <dl>
+      <dt>
+        Sublessor
+      </dt>
+      <!-- Display sublessor_id start -->
+      <dd>
+        <%= @booking.sublessor_id %>
+      </dd>
+      <!-- Display sublessor_id end -->
+
+      <dt>
+        Sublessee
+      </dt>
+      <!-- Display sublessee_id start -->
+      <dd>
+        <%= @booking.sublessee_id %>
+      </dd>
+      <!-- Display sublessee_id end -->
+
+      <dt>
+        Payment method
+      </dt>
+      <!-- Display payment_method start -->
+      <dd>
+        <%= @booking.payment_method %>
+      </dd>
+      <!-- Display payment_method end -->
+
+      <dt>
+        Housing
+      </dt>
+      <!-- Display housing_id start -->
+      <dd>
+        <%= @booking.housing_id %>
+      </dd>
+      <!-- Display housing_id end -->
+
+      <dt>
+        Booking details
+      </dt>
+      <!-- Display booking_details start -->
+      <dd>
+        <%= @booking.booking_details %>
+      </dd>
+      <!-- Display booking_details end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@booking.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@booking.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

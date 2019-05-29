@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Booking resource:
+
+  # CREATE
+  get("/bookings/new", { :controller => "bookings", :action => "new_form" })
+  post("/create_booking", { :controller => "bookings", :action => "create_row" })
+
+  # READ
+  get("/bookings", { :controller => "bookings", :action => "index" })
+  get("/bookings/:id_to_display", { :controller => "bookings", :action => "show" })
+
+  # UPDATE
+  get("/bookings/:prefill_with_id/edit", { :controller => "bookings", :action => "edit_form" })
+  post("/update_booking/:id_to_modify", { :controller => "bookings", :action => "update_row" })
+
+  # DELETE
+  get("/delete_booking/:id_to_remove", { :controller => "bookings", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Housing listing resource:
 
   # CREATE

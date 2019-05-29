@@ -1,0 +1,81 @@
+<h1>
+  Add a new booking
+</h1>
+
+
+<hr>
+
+<!-- Form booking start -->
+<form action="/create_booking" method="post">
+<!-- Form booking end -->
+
+  <!-- Label and input for sublessor_id start -->
+  <div class="form-group">
+    <label for="sublessor_id">
+      Sublessor
+    </label>
+
+    <!-- Input for sublessor_id start -->
+    <input type="text" id="sublessor_id" name="sublessor_id" class="form-control">
+    <!-- Input for sublessor_id end -->
+  </div>
+  <!-- Label and input for sublessor_id end -->
+
+  <!-- Label and input for sublessee_id start -->
+  <div class="form-group">
+    <label for="sublessee_id">
+      Sublessee
+    </label>
+
+    <!-- Input for sublessee_id start -->
+    <input type="text" id="sublessee_id" name="sublessee_id" class="form-control">
+    <!-- Input for sublessee_id end -->
+  </div>
+  <!-- Label and input for sublessee_id end -->
+
+  <!-- Label and input for payment_method start -->
+  <div class="form-group">
+    <label for="payment_method">
+      Payment method
+    </label>
+
+    <!-- Input for payment_method start -->
+    <input type="text" id="payment_method" name="payment_method" class="form-control">
+    <!-- Input for payment_method end -->
+  </div>
+  <!-- Label and input for payment_method end -->
+
+  <!-- Label and input for housing_id start -->
+  <div class="form-group">
+    <label for="housing_id">
+      Housing
+    </label>
+
+    <!-- Input for housing_id start -->
+    <input type="text" id="housing_id" name="housing_id" class="form-control">
+    <!-- Input for housing_id end -->
+  </div>
+  <!-- Label and input for housing_id end -->
+
+  <!-- Label and input for booking_details start -->
+  <div class="form-group">
+    <label for="booking_details">
+      Booking details
+    </label>
+
+    <!-- Input for booking_details start -->
+    <input type="text" id="booking_details" name="booking_details" class="form-control">
+    <!-- Input for booking_details end -->
+  </div>
+  <!-- Label and input for booking_details end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create booking
+  </button>
+</form>
+
+<hr>
+
+<a href="/bookings">
+  Go back
+</a>
