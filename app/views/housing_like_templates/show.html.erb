@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Housing like #<%= @housing_like.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/housing_likes" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link housing_like start -->
+      <div class="col">
+        <a href="/housing_likes/<%= @housing_like.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit housing like
+        </a>
+      </div>
+      <!-- Edit link housing_like end -->
+
+      <!-- Delete link housing_like start -->
+      <div class="col">
+        <a href="/delete_housing_like/<%= @housing_like.id %>" class="btn btn-block btn-outline-secondary">
+          Delete housing like
+        </a>
+      </div>
+      <!-- Delete link housing_like end -->
+    </div>
+
+    <dl>
+      <dt>
+        Sublessee
+      </dt>
+      <!-- Display sublessee_id start -->
+      <dd>
+        <%= @housing_like.sublessee_id %>
+      </dd>
+      <!-- Display sublessee_id end -->
+
+      <dt>
+        Housing
+      </dt>
+      <!-- Display housing_id start -->
+      <dd>
+        <%= @housing_like.housing_id %>
+      </dd>
+      <!-- Display housing_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@housing_like.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@housing_like.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

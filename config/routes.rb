@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Housing like resource:
+
+  # CREATE
+  get("/housing_likes/new", { :controller => "housing_likes", :action => "new_form" })
+  post("/create_housing_like", { :controller => "housing_likes", :action => "create_row" })
+
+  # READ
+  get("/housing_likes", { :controller => "housing_likes", :action => "index" })
+  get("/housing_likes/:id_to_display", { :controller => "housing_likes", :action => "show" })
+
+  # UPDATE
+  get("/housing_likes/:prefill_with_id/edit", { :controller => "housing_likes", :action => "edit_form" })
+  post("/update_housing_like/:id_to_modify", { :controller => "housing_likes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_housing_like/:id_to_remove", { :controller => "housing_likes", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Inquiry resource:
 
   # CREATE

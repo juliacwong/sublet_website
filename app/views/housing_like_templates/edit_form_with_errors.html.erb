@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @housing_like.errors.any? %>
+  <% @housing_like.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit housing like #<%= @housing_like.id %>
+</h1>
+
+<hr>
+
+<!-- Form housing_like start -->
+<form action="/update_housing_like/<%= @housing_like.id %>" method="post">
+<!-- Form housing_like end -->
+
+  <!-- Label and input for sublessee_id start -->
+  <div class="form-group">
+    <label for="sublessee_id">
+      Sublessee
+    </label>
+
+    <!-- Input for sublessee_id start -->
+    <input type="text" id="sublessee_id" name="sublessee_id" class="form-control" value="<%= @housing_like.sublessee_id %>">
+    <!-- Input for sublessee_id end -->
+  </div>
+  <!-- Label and input for sublessee_id end -->
+
+  <!-- Label and input for housing_id start -->
+  <div class="form-group">
+    <label for="housing_id">
+      Housing
+    </label>
+
+    <!-- Input for housing_id start -->
+    <input type="text" id="housing_id" name="housing_id" class="form-control" value="<%= @housing_like.housing_id %>">
+    <!-- Input for housing_id end -->
+  </div>
+  <!-- Label and input for housing_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update housing like
+  </button>
+</form>
+
+<hr>
+
+<a href="/housing_likes">
+  Go back
+</a>
