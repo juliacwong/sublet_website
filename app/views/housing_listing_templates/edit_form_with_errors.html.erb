@@ -156,7 +156,7 @@
     </label>
 
     <!-- Input for sublessor_id start -->
-    <input type="text" id="sublessor_id" name="sublessor_id" class="form-control" value="<%= @housing_listing.sublessor_id %>">
+    <%= select_tag(:sublessor_id, options_from_collection_for_select(User.all, :id, :email, @housing_listing.sublessor_id), :class => "form-control") %>
     <!-- Input for sublessor_id end -->
   </div>
   <!-- Label and input for sublessor_id end -->
