@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Inquiry resource:
+
+  # CREATE
+  get("/inquiries/new", { :controller => "inquiries", :action => "new_form" })
+  post("/create_inquiry", { :controller => "inquiries", :action => "create_row" })
+
+  # READ
+  get("/inquiries", { :controller => "inquiries", :action => "index" })
+  get("/inquiries/:id_to_display", { :controller => "inquiries", :action => "show" })
+
+  # UPDATE
+  get("/inquiries/:prefill_with_id/edit", { :controller => "inquiries", :action => "edit_form" })
+  post("/update_inquiry/:id_to_modify", { :controller => "inquiries", :action => "update_row" })
+
+  # DELETE
+  get("/delete_inquiry/:id_to_remove", { :controller => "inquiries", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Booking resource:
 
   # CREATE

@@ -1,0 +1,80 @@
+<!-- Validation failure messages -->
+<% if @inquiry.present? %>
+  <% if @inquiry.errors.any? %>
+    <% @inquiry.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new inquiry
+</h1>
+
+
+<hr>
+
+<!-- Form inquiry start -->
+<form action="/create_inquiry" method="post">
+<!-- Form inquiry end -->
+
+  <!-- Label and input for sublessee_id start -->
+  <div class="form-group">
+    <label for="sublessee_id">
+      Sublessee
+    </label>
+
+    <!-- Input for sublessee_id start -->
+    <input type="text" id="sublessee_id" name="sublessee_id" class="form-control" value="<%= @inquiry.sublessee_id %>">
+    <!-- Input for sublessee_id end -->
+  </div>
+  <!-- Label and input for sublessee_id end -->
+
+  <!-- Label and input for sublessor_id start -->
+  <div class="form-group">
+    <label for="sublessor_id">
+      Sublessor
+    </label>
+
+    <!-- Input for sublessor_id start -->
+    <input type="text" id="sublessor_id" name="sublessor_id" class="form-control" value="<%= @inquiry.sublessor_id %>">
+    <!-- Input for sublessor_id end -->
+  </div>
+  <!-- Label and input for sublessor_id end -->
+
+  <!-- Label and input for housing_id start -->
+  <div class="form-group">
+    <label for="housing_id">
+      Housing
+    </label>
+
+    <!-- Input for housing_id start -->
+    <input type="text" id="housing_id" name="housing_id" class="form-control" value="<%= @inquiry.housing_id %>">
+    <!-- Input for housing_id end -->
+  </div>
+  <!-- Label and input for housing_id end -->
+
+  <!-- Label and input for inquiry_details start -->
+  <div class="form-group">
+    <label for="inquiry_details">
+      Inquiry details
+    </label>
+
+    <!-- Input for inquiry_details start -->
+    <input type="text" id="inquiry_details" name="inquiry_details" class="form-control" value="<%= @inquiry.inquiry_details %>">
+    <!-- Input for inquiry_details end -->
+  </div>
+  <!-- Label and input for inquiry_details end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create inquiry
+  </button>
+</form>
+
+<hr>
+
+<a href="/inquiries">
+  Go back
+</a>

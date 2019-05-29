@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Inquiry #<%= @inquiry.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/inquiries" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link inquiry start -->
+      <div class="col">
+        <a href="/inquiries/<%= @inquiry.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit inquiry
+        </a>
+      </div>
+      <!-- Edit link inquiry end -->
+
+      <!-- Delete link inquiry start -->
+      <div class="col">
+        <a href="/delete_inquiry/<%= @inquiry.id %>" class="btn btn-block btn-outline-secondary">
+          Delete inquiry
+        </a>
+      </div>
+      <!-- Delete link inquiry end -->
+    </div>
+
+    <dl>
+      <dt>
+        Sublessee
+      </dt>
+      <!-- Display sublessee_id start -->
+      <dd>
+        <%= @inquiry.sublessee_id %>
+      </dd>
+      <!-- Display sublessee_id end -->
+
+      <dt>
+        Sublessor
+      </dt>
+      <!-- Display sublessor_id start -->
+      <dd>
+        <%= @inquiry.sublessor_id %>
+      </dd>
+      <!-- Display sublessor_id end -->
+
+      <dt>
+        Housing
+      </dt>
+      <!-- Display housing_id start -->
+      <dd>
+        <%= @inquiry.housing_id %>
+      </dd>
+      <!-- Display housing_id end -->
+
+      <dt>
+        Inquiry details
+      </dt>
+      <!-- Display inquiry_details start -->
+      <dd>
+        <%= @inquiry.inquiry_details %>
+      </dd>
+      <!-- Display inquiry_details end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@inquiry.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@inquiry.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
