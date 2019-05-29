@@ -15,15 +15,9 @@
   <!-- Label and input for sublessor_id end -->
 
   <!-- Label and input for sublessee_id start -->
-  <div class="form-group">
-    <label for="sublessee_id">
-      Sublessee
-    </label>
-
-    <!-- Input for sublessee_id start -->
-    <%= select_tag(:sublessee_id, options_from_collection_for_select(User.all, :id, :email, @booking.sublessee_id), :class => "form-control") %>
-    <!-- Input for sublessee_id end -->
-  </div>
+  <!-- Input for "sublessee_id" start -->
+  <input type="hidden" name="sublessee_id" value="<%= current_user.id %>">
+  <!-- Input for "sublessee_id" end -->
   <!-- Label and input for sublessee_id end -->
 
   <!-- Label and input for payment_method start -->

@@ -63,7 +63,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params.fetch("id_to_modify"))
 
     @booking.sublessor_id = params.fetch("sublessor_id")
-    @booking.sublessee_id = params.fetch("sublessee_id")
+    
     @booking.payment_method = params.fetch("payment_method")
     @booking.housing_id = params.fetch("housing_id")
     @booking.booking_details = params.fetch("booking_details")
